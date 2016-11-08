@@ -17,20 +17,13 @@ app.use(function(req, res, next) {
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', { noCache: true });
+app.use(express.static('public'));
+//the two lines below configure our parser for different inputs??
+app.use(bodyParser.urlencoded({ extended:true})); // this is for HTML
+app.use(bodyParser.json()); // this is for AJAX
 
 app.use(volleyball);
 app.use('/', routes);
-
-app.use(express.static('public'));
-
-
-// var coolPeepsPage = {
-// 	"title" : "An Example",
-// 	"people" : [
-// 	{name: "Gandalf"}, {name: "Frodo"}, {name: "Hermione"}
-// 	]
-// }
-// var rendered = nunjucks.render('index.html', coolPeepsPage);
 
 
 
