@@ -32,4 +32,6 @@ for (let i = 0; i < 11; i++) {
   add( getFakeName(), getFakeTweet() );
 }
 
+add("Andy", "I love to check for errors, so good");
+
 module.exports = { add: add, list: list, find: find, getFakeName: getFakeName, getFakeTweet: getFakeTweet};

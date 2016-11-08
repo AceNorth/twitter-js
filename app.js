@@ -5,6 +5,7 @@ const router = express.Router();
 const nunjucks = require('nunjucks');
 const tweetBank = require('./tweetBank.js');
 const routes = require('./routes/');
+const bodyParser = require('body-parser');
 
 app.use(function(req, res, next) {
   res.header("Cache-Control", "no-cache, no-store, must-revalidate");
